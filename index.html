@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>My Library</title>
+</head>
+<body>
+    <div class="header">My Library</div>
+    <div class="cards">
+        <div class="card initial">
+            <div class="f-title">Add a New Book</div>
+            <form id="book-form">
+                <div class="form-package">
+                    <label for="bname">Book Name:</label>
+                    <input id="bname" type="text" required>
+                </div>
+
+                <div class="form-package">
+                    <label for="aname">Author's Name</label>
+                    <input id="aname" type="text" required>
+                </div>
+
+                <div class="form-package">
+                    <label for="npages">Number of Pages:</label>
+                    <input id="npages" type="number" min="1" max="10000" required>
+                </div>
+
+                <div class="form-package">
+                    <label for="bread">Done Reading?</label>
+                    <input id="bread" type="checkbox">
+                </div>
+            </form>
+            <div class="button-holder">
+                <button form="book-form" type="submit" id="addBook">ADD BOOK</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
