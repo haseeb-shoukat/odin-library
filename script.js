@@ -8,18 +8,20 @@ let checkboxes = [];
 form.addEventListener('submit', handleForm);
 reloadDOM();
 
-function Book(t, a, p, r) {
-    this.title = t;
-    this.author = a;
-    this.pages = p;
-    this.read = r;
+class Book {
+    constructor (t, a, p, r) {
+        this.title = t;
+        this.author = a;
+        this.pages = p;
+        this.read = r;
+    }
 
-    this.changeRead = function(status) {
+    set read(status) {
         if (status === true) {
-            this.read = true;
+            this._read = true;
         }
         else {
-            this.read = false
+            this._read = false
         }
     }
 }
@@ -39,7 +41,7 @@ function removeBook() {
 
 function changeReadStatus() {
     let index = this.parentNode.getAttribute("data-index");
-    library[index].changeRead(this.checked);
+    library[index].read = this.checked;
 
 }
 
@@ -84,7 +86,6 @@ function reloadDOM() {
         item.addEventListener("change", changeReadStatus)
     })
 
-    console.log(library)
 }
 
 function createElement(item, index) {
